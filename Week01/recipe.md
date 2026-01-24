@@ -4,6 +4,11 @@
 A grilled cheese sandwich is made with bread and melted cheese.  
 **It is quick and easy to make.**
 
+## Servings and Time
+- **Servings:** 1 sandwich
+- **Prep Time:** 5 minutes
+- **Cook Time:** 5 minutes
+
 ## Ingredients
 - 2 slices of bread
 - 2 slices of cheese
