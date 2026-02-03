@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Intro to CSS Text and Spans</title>
+    <!-- this is how you write an internal style sheet -->
+     <!-- these styles apply only to this page they are defined in -->
+    <style type="text/CSS">
+    /* universal selector to zero out the default margins on everything on the page */
+
+    * {
+        margin: 0;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    /* tag selector apply to every instance of a tag on the page */
+    h2{
+      color:blueviolet;
+      background-color:mediumturquoise;
+
+      color: #ff0000;
+      background-color: #ff000077; /* last 2 digits are opacity from 00 to FF */
+
+      color: rgb(0,255,0);
+      background-color: rgba(7, 52, 7, 0.5); /* last value is opacity from 0 to 1 */
+    }
+    /* class selectors */
+    .align_right{
+        width:50%;
+        text-align: right;
+    } 
+    .align_justified{
+        text-align: justify;
+    }
+    .silly_text{
+        font-family:fantasy;
+    }
+    /* id selector*/
+    #really_important{
+      /* font weights only work if they are supported. */
+      font-weight: bold;
+      font-size:xx-large;
+
+    }
+
+    </style>
+  </head>
+  <body>
+    <!-- inline styling this will override any stylesheets above -->
+    <h1 style="margin: 20px 10px 5px 5px; ">Heading 1 Displays Block</h1>
+    <!-- 2 values: topbottom/leftright ; 4 values: top/right/bottom/left -->
+    <p class="align_right"> Contrary to popular belief, Lorem Ipsum is not simply random text. 
+      It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+      Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the 
+      more obscure Latin words, consectetur, <span class="silly_text">from a Lorem Ipsum passage,</span> and 
+      going through the cites of 
+      the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 
+      1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written 
+      in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first 
+      line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+    <h2>Heading 2 Displays Block</h2>
+
+    <p id="really_important" class="align_justified"> 
+      There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
+      alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
+      If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden 
+      in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as 
+      necessary
+    </p>
+  </body>
+</html>
