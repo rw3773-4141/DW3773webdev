@@ -1,112 +1,85 @@
 <!DOCTYPE html>
-<html>
-    <head>
-         <meta charset="UTF-8" />
-         <meta name="viewport" content="width=device-width, initial-scale=1" />
-         <title>Recipe</title>
-    </head>
-    <style type="text/CSS">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe</title>
 
-    * {
-        margin: 0;
-    }
-    body{
-        font-family: 'Courier New', Courier, monospace;
-    }
+    <style>
+      * { margin: 0; }
 
-    ul{
-      list-style-type: none;
-      overflow: hidden;
-      background-color: rgba(255, 10, 10, 0.511);
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-      font-size: 0;
+      ul {
+        list-style-type: none;
+        overflow: hidden;
+        background-color: rgba(255, 10, 10, 0.511);
+        font-size: 0;
+        text-align: center;
+      }
 
-    }
-    li{
-      display:inline-block;
-      font-size: 1rem;
-      width: 200px;
-    }
+      li {
+        display: inline-block;
+        font-size: 1rem;
+        width: 200px;
+      }
 
-    li a{
-      display: block;
-      text-align: center;
-      width: 100px;
-      padding: 10px;
-      /*padding-top: 50px;*/
-      color:rgb(0, 0, 0);
-      text-decoration: none;
-    }
+      li a {
+        display: block;
+        text-align: center;
+        width: 100px;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        margin: 0 auto;
+      }
 
-    .active{
-      background-color: rgb(255, 255, 255);
-    }
+      li a:hover {
+        background-color: rgb(30, 63, 210);
+        color: white;
+      }
 
-    li a:hover{
-      background-color: rgb(30, 63, 210);
+      .title {
+        font-size: 2rem;
+        padding: 10px;
+        text-align: center;
+      }
+
+      footer{
+        margin-top: 20px;
+        padding: 12px;
+        text-align: center;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
     }
     </style>
-    <body>
-        <nav>
+  </head>
+
+  <body>
+    <header>
+      <div class="title"><strong>DW's Recipe</strong></div>
+
+      <nav>
         <ul>
-          <li><a href="#">Link 1</a></li>
-          <li>
-            <a
-              class="active"
-              href="#"
-              >Link 2</a
-            >
-          </li>
-          <li><a href="#">Link 3</a></li>
-          <li><a href="#">Link 4</a></li>
+          <li><a href="./recipe.html">Recipes</a></li>
+          <li><a href="./categories.html">Categories</a></li>
         </ul>
-        </nav>
+      </nav>
+    </header>
 
+    <main>
         <article>
-            <img src="./img/GrilledCheese.jpg" 
-             alt="Picture of a grilled cheese sandwich."
-             width="500" />
-            <header>
-                <h1>Grilled Cheese Sandwich Recipe</h1>
-    
-                <p>
-                     <strong>Servings:</strong> 1 sandwich
-                     <br />
-                     <strong>Prep Time:</strong> 5 minutes
-                     <br />
-                     <strong>Cook Time:</strong> 5 minutes
-                </p>
-    
-                <p>A simple grilled cheese sandwich made with bread and melted cheese.</p>
-                
-                <h3>Ingredients:</h3>
-                <ul>
-                     <li> 2 slices of bread</li>
-                     <li> 2 slice of cheese</li>
-                     <li> 1 tablespoon of butter</li>
-                </ul>
-
-                <h3>Instructions:</h3>
-                <ol>
-                    <li> Butter one side of each slice of bread.</li>
-                    <li> Place one slice buttered-side down on a plate.</li>
-                    <li>Cook in a pan, flipping once, until both sides are golden and the cheese is melted.</li>
-                </ol>
-
-            </header>
+            <img src="./img/kitchen.avif" alt="Picture of a kitchen." height="700" />
         </article>
-        
-        <aside>
-            <nav>
-                <ul>
-                    <li><a href="#">Related Recipe 1</a></li>
-                    <li><a href="#">Related Recipe 2</a></li>
-                    <li><a href="#">Related Recipe 3</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <footer>
-            
-        </footer>
-    </body>
+    </main>
+
+    <footer>
+      <p><strong>Contact Info:</strong> rw3773@nyu.edu</p>
+      <p><strong>Copy rights:</strong> © 2026</p>
+    </footer>
+  </body>
 </html>
