@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Positioning Basics</title>
+    <!-- How we load an external stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Maybe this could be where a fixed navigation could live? </h1>
+    </header>
+    <div class = "abs-no-parent">
+      <p>This div has no parent element with a position property set in CSS. If you do not explicity
+        assign a position type, the default is position: static;
+      </p>
+    </div>
+    <div class = "rel-parent">
+      <p>This div is a <em>relatively positioned </em> parent element.</p>
+      <div class = "abs-rel-parent">
+        <p>This div is absolutely positioned inside of a parent div which is relatively positioned.
+          Relatice postion is not static, so the absolute positioning will behave differently than the div with no parent element with a position property set.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

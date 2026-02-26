@@ -1,0 +1,52 @@
+/* We always load our fonts and css variables */
+/* Then declare the most generic and global styles */
+html, body{
+    margin: 0;
+}
+/* Generic style so that we can see our div elements and how they nest */
+div,header{
+    /* Border shorthand -  assign 3 values at once;
+    border-width border-style border-color */
+    border:1px solid red;
+    padding: 10px;
+}
+/* Absolute positioned elements without a positioned parent
+will be positioned in relation to the entire browser window */
+.abs-no-parent{
+    background-color: lightblue;
+    position:absolute;
+    top: 10%;
+    right: 300px;
+
+}
+.rel-parent{
+    background-color:blueviolet;
+    width: 50%;
+    /* height position dont exactly work as your'd think
+    Unless there's a parent element with a set height (in pixels or rem*/
+    /*  viewport height snf viewport width assign heights in picels based on
+    % of height of browser window at the time */
+    height: 200vh;
+    /* Whenever you want to position something absolute inside another
+    element, the parent element your are positioning in needs to be position
+    relative */
+    position:relative;
+
+}
+
+.abs-rel-parent{
+    background-color: rgb(12,255,16);
+    width:200px;
+    height: 200px;
+    position: absolute;
+    bottom: 100px;
+    right: 0px;
+}
+
+header{
+    height:100px;
+    width: 100%;
+    position:fixed;
+    background-color: rgb(238, 127, 127);
+    z-index: 10;
+}
