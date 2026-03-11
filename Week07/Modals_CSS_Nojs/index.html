@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Only Modal</title>
+    <!-- Internal Stylesheet -->
+    <style type="text/css">
+    * {
+      box-sizing: border-box;
+
+    }
+
+    html, body {
+      margin: 0;
+      
+    }
+    a.button {
+      text-decoration: none;
+      color: white;
+      background-color: blueviolet;
+      padding: 1rem 2rem;
+      border-radius: .5rem;
+      display: inline-block;
+
+    }
+    .info_modal {
+      /*stretch a div to cover the entire screen*/
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, .5);
+      z-index: 9999;
+      /*staring state at 0% opacity*/
+      opacity: 0;
+      /*make sure the content behind the overlay */
+      pointer-events: none;
+      transition: opacity 400ms ease;
+
+    }
+    .info_modal:target {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .info_modal > div {
+      width: 600px;
+      height: 600px;
+      margin: 10% auto;
+      position:  relative;
+      padding: 2rem;
+      border-radius: .75rem;
+      background-color: white;
+
+    }
+    .close{
+      position:absolute;
+      height: 20px;
+      width: 20px;
+      background-color: whitesmoke;
+      color: black;
+      position:absolute;
+      top: 0;
+      right: 0;
+      text-decoration: none;
+      transition: all 1s ease;
+      text-align: center;
+    }
+
+    </style>
+  </head>
+  <body>
+    <!-- Begin Model 1 -->
+    <!-- parent / wrapper div which receives the ID that need to be targeted -->
+     <!-- This div will also be our transprent overlay -->
+    <a href="#info" class="button">Link to Modal</a>
+    <!-- this is our box within the overlay -->
+    <div id="info" class="info_modal"></div>
+      <div>
+        <a href="#close" class="close">X</a>
+        <h1>Hello modal</h1>
+        <p>Here is some content for the modal.</p>
+      </div>
+    <!-- End Model 1 -->
+  </body>
+</html>

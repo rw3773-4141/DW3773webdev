@@ -1,0 +1,149 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+img {
+    /* scale to fit the width of the parent element */
+    width: 100%;
+    /* preserves the pixel aspect ratio */
+    height: auto;
+}
+
+/* Flexbox simple row layouts */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* some more properties so we can see out divs */
+    border: 1px solid purple;
+    background-color: rgba(255, 0, 255, 0.3);
+    min-height: 400px;
+
+}
+
+.item {
+    border: 1px solid cornflowerblue;
+    background-color: rgba(0, 0, 255, 0.3);
+    width: 23%;
+    height: 300px;
+}
+
+/* Atomic CSS Design Pattern */
+.center {
+    display: flex;
+    /* horizontal distribution */
+    justify-content: center;
+    /* vertical alignment */
+    align-items: center;
+
+}
+.justify_start {
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.justify-around {
+    justify-content: space-around;
+}
+.justify-even {
+    justify-content: space-evenly;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+.align-end {
+    align-items: flex-end;  
+}
+.align-center {
+    align-items: center;
+}
+.align-stretch {
+    align-items: stretch;
+}   
+.self-stretch {
+    align-self: stretch;
+    height: auto;
+}
+
+/* Classic layout example */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    height: 100px;
+    background-color: aqua;
+    
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* change the justifu content values and  */
+    justify-content: flex-start;
+    align-items: center;
+    background-color: darkcyan;
+
+}
+
+.grid-item {
+    width: 31%;
+    margin: 1%;
+
+}
+
+.secondary-nav {
+    min-width:  25%;
+    background-color: aquamarine;
+
+
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+.menu li {
+    border-bottom: 1px spold gray;
+
+}
+
+.menu span {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
