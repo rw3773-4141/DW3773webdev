@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap');
+      /* CSS Variables */
+@import url('vars.css');
+     
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .label-lg {
+        font-size: 2rem;
+      }
+
+      .input-lg {
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid var(--c-text-);
+        margin-right: 2rem;
+      }
+
+      .message-area {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        font-size: 2rem;
+      }
+
+      .message {
+        height: 16rem;
+        border-radius: 0.25rem;
+        padding: 1rem;
+      } 
+
+      .button-bar {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 2rem;
+      }
+
+      .btn-dark {
+        width: 100%;
+        border-radius: 0.5rem;
+        padding:1rem;
+        background-color: var(--c-bg-btn-);
+        color: var(--c-btn-text-);
+        border: 1px solid var(--c-btn-text-);
+
+      }
+
+      .btn-dark:hover {
+        background-color: var(--c-bg-btn-hover-);
+      }

@@ -1,0 +1,398 @@
+/* reset default spacing and make width easier to control */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* smooth jump when clicking nav links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* basic page style */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f4ef;
+  color: #1f1f1f;
+}
+
+/* remove default link underline */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* top navigation bar */
+.header {
+  width: 100%;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(245, 244, 239, 0.95);
+  border-bottom: 1px solid rgba(31, 31, 31, 0.15);
+  z-index: 100;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* site title */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* hamburger icon hidden on desktop */
+.mobile-menu {
+  display: none;
+}
+
+/* nav list */
+.menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+/* each nav item */
+.menu li {
+  min-width: 5.5rem;
+  justify-content: center;
+}
+
+/* nav links */
+.menu li a {
+  display: block;
+  padding: 1rem;
+  color: #555;
+  transition: all 1s;
+  text-align: center;
+}
+
+/* nav hover */
+.menu li a:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #111;
+}
+
+/* first large section */
+.top {
+  width: 100%;
+  padding: 10rem 4rem 5rem 4rem;
+}
+
+/* small top label */
+.small-title {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* main heading */
+.top h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  width: 75%;
+  margin-bottom: 1.5rem;
+}
+
+/* intro paragraph */
+.text {
+  width: 55%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+}
+
+/* button row */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* first button */
+.btn1 {
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: white;
+  background-color: #333;
+  text-align: center;
+  transition: all 1s ease;
+  width: 10rem;
+}
+
+/* first button hover */
+.btn1:hover {
+  background-color: #777;
+  transform: scale(1.05);
+}
+
+/* second button */
+.btn2 {
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: #333;
+  background-color: transparent;
+  text-align: center;
+  transition: all 1s ease;
+  width: 10rem;
+}
+
+/* second button hover */
+.btn2:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: scale(1.05);
+}
+
+/* shared section layout */
+.section {
+  width: 100%;
+  padding: 5rem 4rem;
+  border-top: 1px solid rgba(31, 31, 31, 0.12);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* left section number */
+.number {
+  width: 10%;
+  color: #888;
+  font-size: 1rem;
+}
+
+/* right section content */
+.content {
+  width: 82%;
+}
+
+/* section headings */
+.content h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+/* section paragraphs */
+.content p {
+  width: 85%;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #4b4b4b;
+  margin-bottom: 1rem;
+}
+
+/* card area */
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* each card */
+.card {
+  width: 30%;
+  padding: 1.5rem;
+  border: 1px solid rgba(31, 31, 31, 0.12);
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 1s ease;
+}
+
+/* card hover */
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* card title */
+.card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* card text */
+.card p {
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+/* quote box */
+.box {
+  width: 85%;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-left: 4px solid rgba(31, 31, 31, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* last section */
+.go {
+  width: 100%;
+  padding: 7rem 4rem;
+  text-align: center;
+  border-top: 1px solid rgba(31, 31, 31, 0.12);
+}
+
+/* large enter link */
+.go-link {
+  display: inline-block;
+  font-size: 3rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid #1f1f1f;
+  transition: all 1s ease;
+}
+
+/* enter link hover */
+.go-link:hover {
+  transform: scale(1.05);
+  color: #666;
+}
+
+
+/* footer */
+.footer {
+  padding: 2rem 4rem;
+  color: #777;
+}
+
+/* tablet */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .top h2 {
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  .text {
+    width: 80%;
+  }
+
+  .card {
+    width: 45%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 0;
+    position: fixed;
+  }
+
+  .logo {
+    margin: 1rem 0;
+  }
+
+  /* show hamburger on mobile */
+  .mobile-menu {
+    display: block;
+    font-size: 2rem;
+    color: #555;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+
+  /* hide nav by default */
+  .nav {
+    display: none;
+    width: 100%;
+  }
+
+  /* show nav after click */
+  #menu-toggle:checked + .mobile-menu + .nav {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .top {
+    padding: 12rem 1.5rem 4rem 1.5rem;
+  }
+
+  .top h2 {
+    width: 100%;
+    font-size: 2.2rem;
+  }
+
+  .text {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .section {
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+  }
+
+  .number {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content p {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .go {
+    padding: 5rem 1.5rem;
+  }
+
+  .go-link {
+    font-size: 2rem;
+  }
+
+  .footer {
+    padding: 1.5rem;
+  }
+}
