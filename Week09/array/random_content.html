@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Random Content</title>
+    <script>
+      // Your JavaScript here
+      // make an array of image srcs to choose from at random when the page loads
+      var arrImg = [
+        '',
+        '',
+        '',
+        ]
+
+      // randomm links to corresponding with each image
+      var arrLink = [
+        '',
+        '',
+        '',
+        ]
+      // helper function for a random num between 0 and max
+      function randomIndex(max){
+        return Math.floor(Math.random() * max)
+        
+      }
+
+      // write our own image function outside of our event listeners
+      // remember to not call this function until the dom content is loaded
+      function loadRandomImage(){
+        var index = randomIndex(arrImg.length)
+        var img = document.getElementById('animal')
+        var link = document.getElementById('dynLink')
+
+        // assign the source attribute of the image element to a string stored in a random index slot
+        img.src = arrImg[index]
+        link.href = arrLink[index]
+
+      }
+
+      // wait for the page to finish loading before calling any load functions that need to access html elements
+      document.addEventListener('DOMContentLoaded', function(){
+        loadRandomImage()
+      })
+    </script>
+  </head>
+  <body>
+    <a href="#" id="dynLink" target="_blank"> 
+      <img id="animal" src="">
+    </a>
+  </body>
+</html>

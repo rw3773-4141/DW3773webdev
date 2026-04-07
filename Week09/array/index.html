@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Array Methods</title>
+    <script>
+      // Your JavaScript here
+
+      var months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ]
+      /// Array.length will always tell you how many items are in the array
+      console.log(months.length)
+
+      // remove the last month/slot/item from our months array
+      // and stor it as a variable
+      const lastMonth = months.pop()
+      console.log(months)
+
+      // add another item to the end of the array using push()
+      // push always adds to the end of the array
+      months.push(lastMonth)
+      console.log(months)
+
+      // loop and list out a message with our array values
+      // watch thtat second statement inside the for loop and beware of infinite loops!
+      for (var i = 0; i < months.length; i++){
+        // here we are using template literals
+        console.log(`Month number ${i + 1} is ${months[i]}`)
+      }
+      // declare a new var and set its value as a empty array
+      let backMonths = []
+      for (var i = months.length - 1; i >= 0; i--){
+        const delMonth = months.pop()
+        backMonths.push(delMonth)
+        console.log(`deleted: ${delMonth} and added it to our backwards array. 
+        Months.length is now ${months.length}.`)
+
+      }
+
+      console.log(months, backMonths)
+
+      // pick a random number within the range of our backMonths.length and print the value of that item
+      const rn = Math.floor(Math.random() * backMonths.length)
+      console.log(`random month is: ${backMonths[rn]}`)
+    </script>
+  </head>
+  <body></body>
+</html>
