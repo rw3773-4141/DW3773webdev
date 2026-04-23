@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple Timeline</title>
+    <style type="text/css" media="screen">
+      body {
+        text-align: center;
+      }
+
+      .progress {
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        height: 10px;
+        background-color: black;
+      }
+
+      h2,
+      p {
+        text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="progress"></div>
+    <div id="page-wrap">
+      <h2>Hello Green Sock</h2>
+      <h2>You're Awesome</h2>
+      <p id="description">
+        I just made my first timeline and that's pretty cool!
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        const headers = document.getElementsByTagName('h2');
+        const hello = headers[0];
+        const awesome = headers[1];
+        const text = document.getElementById('description');
+        const progress = document.getElementsByClassName('progress')[0];
+        const bg = document.querySelector('#page-wrap');
+
+        const tl = gsap.timeline();
+
+        tl.from(bg, { duration: 0.5, opacity: 0 })
+          .from(hello, { duration: 0.5, left: -500, opacity: 0 })
+          .from(awesome, { duration: 0.5, right: -1000, opacity: 0 })
+          .from(text, { duration: 1, y: -1000, opacity: 0 })
+          .from(progress, {
+            duration: tl.duration(),
+            scaleX: 0,
+            transformOrigin: 'left',
+            ease: 'none'
+          })
+          .to(progress, 0.2, {opacity: 0, top: -10})
+      });
+    </script>
+  </body>
+</html>

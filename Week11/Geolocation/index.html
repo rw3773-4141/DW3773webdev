@@ -1,0 +1,143 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Geolocation Demo</title>
+
+      <style>
+        /* ---- BASIC PAGE STYLING ---- */
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          font-family: Arial, sans-serif;
+          max-width: 700px;
+          margin: 40px auto;
+          padding: 0 20px;
+          text-align: center;
+          color: #1a1a1a;
+        }
+
+        h1 {
+          margin-bottom: 8px;
+        }
+
+        .subtitle {
+          color: #6b7280;
+          margin-bottom: 32px;
+        }
+
+        /* ---- BUTTON STYLING ---- */
+        button {
+          background-color: #3b82f6;
+          color: white;
+          border: none;
+          padding: 14px 28px;
+          font-size: 16px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+
+        button:hover {
+          background-color: #2563eb;
+        }
+
+        /* ---- RESULT BOX ---- */
+        #result {
+          margin-top: 24px;
+          padding: 20px;
+          background-color: #f3f4f6;
+          border-radius: 8px;
+          font-size: 18px;
+          line-height: 1.6;
+        }
+
+        /* ---- DETAIL TABLE (shown after location is found) ---- */
+        .details-table {
+          margin: 20px auto 0;
+          text-align: left;
+          border-collapse: collapse;
+          width: 100%;
+          max-width: 500px;
+        }
+
+        .details-table td {
+          padding: 8px 12px;
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .details-table td:first-child {
+          font-weight: bold;
+          color: #374151;
+          width: 40%;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Where Am I?</h1>
+      <p class="subtitle">A live demo of the browser's Geolocation API</p>
+
+      <button id="findMe">Find My Location</button>
+
+      <div id="result">Click the button to find your location.</div>
+      
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          document.getElementById('findMe').addEventListener('click' , findMe)
+        })
+          const findMe = () => {
+            // grab the output div called result
+            const result = document.getElementById('result');
+            result.innerHTML = 
+            <table class="details-table">
+              <tr>
+                <th>Latitude</th><td>${lat}</td>
+              </tr>
+              <tr>
+                <th>Longitude</th><td>${lng}</td>
+              </tr>
+              <tr>
+                <th>Accuracy</th><td>${Math.round(accuracy)}</td>
+              </tr>
+            </table>
+            // immediately update the result div content to tell the user the location search is in progress
+            result.textContent = "Looking for you location now..."
+
+            // check if the browser supports geolocation aka the navigator object exists and it has geolocation property
+            // if it doesnt exist wee check right away and exit out early with return after displaying a message to the user
+            if (!("geolocation" in navigator)) {
+              // if it dosent exist
+              result.textContent = "Sorry, your browser does not support geolocation.";
+              return; // nothing more to do here so we should exist out this function early
+            }
+            // if we get past that return statement above, that means geolocation is supported
+            // request the users position
+            // get current Position returns a position object on success
+            // returns an error on error
+            navigator.geolocation.getCurrentPosition(onSuccess, onError)
+          }
+          // receiving the position object from getCurrentPosition
+          const onSuccess = (position) => {
+            let lat = position.coords.latitude;
+            
+            let lng = position.coords.longitude;
+            let accuracy = position.coords.accuracy;
+            console.log(lat, lng, accuracy)
+            // do something with the latitude and longitude values
+          }
+
+          const onError = (error) => {
+            const result = document.getElementById('result');
+            result.textContent = `Error ${error.code}: ${error.message}`;
+            console.log(error);
+          }
+
+      </script>
+    </body>
+  </html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Location Map</title>
+
+    <!-- Leaflet CSS — styles the map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        color: #1a1a1a;
+      }
+
+      h1 {
+        margin-bottom: 4px;
+      }
+
+      .subtitle {
+        color: #6b7280;
+        margin-bottom: 20px;
+      }
+
+      #status {
+        margin: 16px 0;
+        font-size: 18px;
+        color: #374151;
+        padding: 12px;
+        background-color: #f3f4f6;
+        border-radius: 8px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #map {
+        height: 450px;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: 8px;
+        border: 2px solid #d1d5db;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Location on a Map</h1>
+    <p class="subtitle">Geolocation API + Leaflet</p>
+    <div id="status">Finding your location...</div>
+    <div id="map"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+      let status
+      let map 
+      document.addEventListener("DOMContentLoaded", () => {
+      // set global variables for elements on the page
+      status = document.getElementById("status");
+      map = document.getElementById("map");
+
+      // check for browser support of geolocation
+      if (!('geolocation' in navigator)) {
+        status.textContent = 'Geolocation is not supported by your browser.';
+      } else {
+        // if supported, get the current position
+          navigator.geolocation.getCurrentPosition(showOnMap, handleError);
+        }
+      })
+
+      // SUCCESS 
+      const showOnMap = (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        const accuracy = position.coords.accuracy;
+
+       //const {latitude, longitude,accuracy} = position.coords;
+       status.innerHTML = `
+          <strong>Latitude:</strong> ${lat}<br>
+          <strong>Longitude:</strong> ${lng}<br>
+          <strong>Accuracy:</strong> ${accuracy}<br>`
+        // show on map
+        map = L.map('map').setView([lat, lng], 19);
+
+        // add the OpenStreetMap tiles layer so we can see the map
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors',
+        }).addTo(map);
+        // accuracy circle
+        L.circle([lat, lng], {
+          radious: accuracy,
+          color: "#3b82f6",
+          fillColor: '#93c5fd',
+          fillOpacity: 0.2,   
+        }).addTo(map);
+      }
+      // show a marker with a custom popup message at the users location
+      L.marker([lat, lng])
+          .addTo(map)
+          .bindPopup(
+        `
+          <strong>You are here!</strong><br>
+          lat: ${lat.toFixed(5)}<br>
+          lng: ${lng.toFixed(5)}<br>
+        `
+        ).openPopup();
+      const handleError = (error) => {
+        console.log(error)
+      }
+    
+    </script>
+  </body>
+</html>
