@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Makes the page work better on phone, tablet, and laptop screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nostalgic Layout</title>
+
+  <!-- Connect this HTML file to the CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Old Macintosh style top menu bar -->
+  <header class="menu-bar">
+    <div class="menu-left">
+      <span class="apple">◆</span>
+      <span>Emotional Layout</span>
+      <span>File</span>
+      <span>Edit</span>
+      <span>View</span>
+    </div>
+
+    <nav class="menu-right">
+      <a href="../index.html">Back to Main Page</a>
+    </nav>
+  </header>
+
+  <!-- Whole desktop area -->
+  <main class="desktop" id="desktop">
+
+    <!-- Main message window -->
+    <section class="window intro-window">
+      <div class="title-bar">
+        <span>system_message.txt</span>
+        <span>□ □</span>
+      </div>
+
+      <div class="window-content">
+        <p class="small-label">Finder</p>
+
+        <h1>Welcome to Macintosh.</h1>
+
+        <p>
+          The disk “NOSTALGIA” has been inserted.
+        </p>
+
+        <p>
+          Last opened: a long time ago.
+          <br>
+          Please wait while the desktop restores your memories.
+        </p>
+      </div>
+    </section>
+
+    <!-- Desktop icons -->
+    <section class="desktop-icons">
+      <a class="icon" href="../index.html">
+        <div class="folder-shape"></div>
+        <span>Main Page</span>
+      </a>
+
+      <button class="icon" id="shuffleBtn" type="button">
+        <div class="disk-shape"></div>
+        <span>Shuffle</span>
+      </button>
+    </section>
+
+    <!-- Image window 1 -->
+    <article class="photo-card photo-one">
+      <div class="title-bar">
+        <span>memory_01.jpg</span>
+        <span>□</span>
+      </div>
+
+      <div class="photo-area">
+        <img src="./img/no1.jpg" alt="memory image one">
+      </div>
+    </article>
+
+    <!-- Image window 2 -->
+    <article class="photo-card photo-two">
+      <div class="title-bar">
+        <span>memory_02.jpg</span>
+        <span>□</span>
+      </div>
+
+      <div class="photo-area">
+        <img src="./img/no2.jpg" alt="memory image two">
+      </div>
+    </article>
+
+    <!-- Image window 3 -->
+    <article class="photo-card photo-three">
+      <div class="title-bar">
+        <span>memory_03.jpg</span>
+        <span>□</span>
+      </div>
+
+      <div class="photo-area">
+        <img src="./img/no3.jpg" alt="memory image three">
+      </div>
+    </article>
+
+    <!-- Small instruction label -->
+    <p class="hint">drag the windows</p>
+
+  </main>
+
+  <!-- Connect this HTML file to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

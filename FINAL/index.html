@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Makes the page fit different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Emotional Layout</title>
+
+  <!-- Connects this HTML file to the CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 
+    Fixed top menu bar.
+    The two style page links are placed at the top because they are the main entrances.
+  -->
+  <header class="header">
+    <a class="logo" href="#">Emotional Layout</a>
+
+    <nav class="top-style-links">
+      <a class="style-link calm-link" href="./calm/index.html">Calm Page</a>
+      <a class="style-link nostalgic-link" href="./nostalgic/index.html">Nostalgic Page</a>
+    </nav>
+
+    <nav class="section-nav">
+      <a href="#about">About</a>
+      <a href="#concept">Concept</a>
+      <a href="#preview">Preview</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero section -->
+    <section class="top">
+      <p class="small-title">Web Design Final</p>
+
+      <h1>
+        How can the same content feel completely different through design?
+      </h1>
+
+      <p class="text">
+        This project explores how layout, spacing, typography, image, motion, and color
+        can change the emotional experience of a website. The content stays connected,
+        but each style page creates a different mood and rhythm.
+      </p>
+
+      
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="section">
+      <div class="number">01</div>
+
+      <div class="content">
+        <p class="section-label">About the Project</p>
+
+        <h2>One project, different emotional systems.</h2>
+
+        <p>
+          My final project focuses on visual mood in web design. I am interested in how
+          the same idea can feel quiet, distant, personal, or nostalgic depending on the
+          design system around it.
+        </p>
+
+        <p>
+          Instead of treating a webpage as only information, I treat it as an atmosphere.
+          The viewer moves through spacing, color, motion, and interaction as part of the
+          emotional experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- Concept section -->
+    <section id="concept" class="section">
+      <div class="number">02</div>
+
+      <div class="content">
+        <p class="section-label">Design Concept</p>
+
+        <h2>Design choices become emotional choices.</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Calm</h3>
+            <p>
+              The calm page uses large images, slow transitions, soft movement, and empty
+              space to create a quiet visual experience.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Nostalgic</h3>
+            <p>
+              The nostalgic page uses an old Macintosh style, pixel texture, draggable
+              windows, and image fragments to feel more personal and remembered.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Structure</h3>
+            <p>
+              The main page works like a darker index page. It organizes the project and
+              lets the two style pages become the main focus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preview section -->
+    <section id="preview" class="section">
+      <div class="number">03</div>
+
+      <div class="content">
+        <p class="section-label">Preview</p>
+
+        <h2>Choose a style to enter.</h2>
+
+        <div class="preview-grid">
+          <a class="preview-card calm-preview" href="./calm/index.html">
+            <span>Style 01</span>
+            <h3>Calm Page</h3>
+            <p>Soft, quiet, slow, and image-based.</p>
+          </a>
+
+          <a class="preview-card nostalgic-preview" href="./nostalgic/index.html">
+            <span>Style 02</span>
+            <h3>Nostalgic Page</h3>
+            <p>Pixelated, personal, old-computer memory.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>David Wang · Web Design Final</p>
+  </footer>
+
+</body>
+</html>
